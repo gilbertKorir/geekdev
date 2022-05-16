@@ -7,13 +7,74 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
           crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="/css/index.css">
     <title>Title</title>
 </head>
 <body>
+<nav class="container navbar navbar-expand-sm fixed-top mt-3">
 
+<a href="#"><h4 style="color:black;">geek<span>Dev</span></h4></a>
+    <ul class="navbar-nav ml-auto p-3">
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                About Us
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                Services
+            </a>
+        </li>
+        <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                Sign Up <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <a class="dropdown-item" href="/create/student">Student</a>
+                <a class="dropdown-item" href="/create/developer">Developer</a>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                Login <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <a class="dropdown-item" href="/log/">Student</a>
+                <a class="dropdown-item" href="/view/locations">Developer</a>
+            </ul>
+        </div>
 
+    </ul>
+</nav>
+<div class="container description">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>FIND A PROJECT THAT SUITS<br>
+                YOU TO COLLABORATE ON.</h4>
+            <p class="pt-4">When our apps become popular, it’s an achievement for the whole team. <br>
+                It’s a true joy to see app or game being used by someone on a bus or train.</p>
 
+            <div class="projects d-flex justify-content-around pt-3 pb-3">
+                <p class="text-center">
+                    700+<br>
+                    student projects
+                </p>&nbsp;&nbsp;
+                <p class="text-center">
+                    500+ <br>
+                    Android projects
+                </p>&nbsp;&nbsp;
+                <p class="text-center">
+                    1000+<br>
+                    Excercise challenges
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="/images/an1.png">
+        </div>
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"

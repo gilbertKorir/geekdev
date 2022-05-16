@@ -1,0 +1,30 @@
+*{
+box-sizing: border-box;
+margin:o;
+padding:0;
+}
+body{
+height: 100vh;
+background: linear-gradient(to right top, #da4c9d, #cc5eb5, #b96fc9, #a47ed8, #8d8be1, #7497ea, #58a2ee, #3bacee, #00b8ec, #00c3e5, #00ccd9, #39d4ca);
+background-repeat: no-repeat;
+}
+
+.navbar-nav {
+            margin-left: auto;
+ }
+ .description{
+ margin-top: 200px;
+ }
+ .navbar-nav a{
+ color: black;
+
+ }
+ .projects{
+ margin-top: 50px;
+ border: 2px solid black;
+ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+ transition: all 1s ease-in-out;
+ }
+ .projects:hover {
+   transform: translateX(0px) translateY(10px);
+ }
