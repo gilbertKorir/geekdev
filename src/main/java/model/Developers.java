@@ -17,6 +17,18 @@ public class Developers {
         this.resume = resume;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Developers developer = (Developers) o;
+        return id == developer.id && name.equals(developer.name) && email.equals(developer.email) && password.equals(developer.password) && resume.equals(developer.resume);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, email, password, resume);
+    }
+
     public int getId() {
         return id;
     }
