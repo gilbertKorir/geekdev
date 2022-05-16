@@ -14,4 +14,18 @@ public class Students {
         this.email = email;
         this.password = password;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Students)) return false;
+        Students students = (Students) o;
+        return id == students.id && Objects.equals(name, students.name) && Objects.equals(email, students.email) && Objects.equals(password, students.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, email, password, id);
+    }
+
 }
