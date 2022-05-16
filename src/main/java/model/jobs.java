@@ -3,20 +3,27 @@ package model;
 import java.util.Objects;
 
 public class jobs {
+    private String company;
     private String title;
     private String description;
     private String duration;
     private String languages;
-    private String link;
     private int id;
 
-    public jobs(String title, String description, String duration, String languages, String link) {
+    public jobs(String company, String title, String description, String duration, String languages) {
+        this.company = company;
         this.title = title;
         this.description = description;
         this.duration = duration;
         this.languages = languages;
-        this.link = link;
-        this.id = id;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     public String getTitle() {
@@ -51,14 +58,6 @@ public class jobs {
         this.languages = languages;
     }
 
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
     public int getId() {
         return id;
     }
@@ -73,15 +72,16 @@ public class jobs {
         if (o == null || getClass() != o.getClass()) return false;
         jobs jobs = (jobs) o;
         return id == jobs.id &&
+                Objects.equals(company, jobs.company) &&
                 Objects.equals(title, jobs.title) &&
                 Objects.equals(description, jobs.description) &&
                 Objects.equals(duration, jobs.duration) &&
-                Objects.equals(languages, jobs.languages) &&
-                Objects.equals(link, jobs.link);
+                Objects.equals(languages, jobs.languages);
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, description, duration, languages, link, id);
+        return Objects.hash(company, title, description, duration, languages, id);
     }
 }
