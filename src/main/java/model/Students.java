@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class androidCollaborators {
+public class Students {
 
     private String name;
     private String language;
@@ -10,7 +10,7 @@ public class androidCollaborators {
     private String role;
     private int id;
 
-    public androidCollaborators(String name, String language, String contact, String role) {
+    public Students(String name, String language, String contact, String role) {
         this.name = name;
         this.language = language;
         this.contact = contact;
@@ -62,7 +62,7 @@ public class androidCollaborators {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        androidCollaborators that = (androidCollaborators) o;
+        Students that = (Students) o;
         return id == that.id &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(language, that.language) &&
