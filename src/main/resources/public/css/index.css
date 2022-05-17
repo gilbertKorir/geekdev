@@ -7,13 +7,16 @@ body{
 height: 100vh;
  background: linear-gradient(to right top, #da4c9d, #cc5eb5, #b96fc9, #a47ed8, #8d8be1, #7497ea, #58a2ee, #3bacee, #00b8ec, #00c3e5, #00ccd9, #39d4ca);
  background-repeat: no-repeat;
+ color: white;
 }
-
+.navbar{
+color: white;
+}
 .navbar-nav {
             margin-left: auto;
  }
  #description{
- margin-top: 200px;
+ margin-top: 150px;
  }
  .navbar-nav a{
  color: black;
@@ -47,10 +50,21 @@ color: white;
 font-size:25px;
 opacity:0.3;
 }
+.dev{
+height:100vh;
+ background-image:url("/images/and5.jpeg");
+ background-repeat: no-repeat;
+ background-size:cover;
+ background-position:center;
+color: white;
+font-size:25px;
+}
+#myForm {
+color: white;
+}
 #myForm input{
 padding: 5px;
 width: 400px;
 border-radius: 5px;
 border:none;
-
 }
