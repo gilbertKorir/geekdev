@@ -4,9 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-          rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-          crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="/css/index.css">
     <title>Title</title>
@@ -47,7 +45,7 @@
 
     </ul>
 </nav>
-<div class="container description">
+<div class="container" id="description">
     <div class="row">
         <div class="col-md-6">
             <h4>FIND A PROJECT THAT SUITS<br>
@@ -72,6 +70,11 @@
         </div>
         <div class="col-md-6">
             <img src="/images/an1.png">
+        </div>
+        <div class="main-content mt-5">
+            {{#block "content"}}
+            {{/block}}
+
         </div>
     </div>
 </div>
