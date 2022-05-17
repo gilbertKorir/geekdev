@@ -50,6 +50,10 @@ color: white;
 font-size:25px;
 opacity:0.3;
 }
+.logstud{
+display:grid;
+place-items:center;
+}
 .dev{
 height:100vh;
  background-image:url("/images/and5.jpeg");
@@ -58,6 +62,7 @@ height:100vh;
  background-position:center;
 color: white;
 font-size:25px;
+opacity:0.2;
 }
 #myForm {
 color: white;
