@@ -50,9 +50,9 @@ background-color: white;
 opacity: 0.5;
 }
 
-/*footer*/
+
 .col_white_amrc { color:#FFF;}
-footer { width:100%; background-color:#263238; min-height:250px; padding:10px 0px 25px 0px ;}
+footer { width:100%; background-color:#263238; min-height:150px; padding:10px 0px 25px 0px ;}
 .pt2 { padding-top:40px ; margin-bottom:20px ;}
 footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
 .mb10 { padding-bottom:15px ;}
@@ -86,4 +86,44 @@ footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
 .social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
 .social_footer_ul li i {  width:20px; height:20px; text-align:center;}
 
-/* Credit to https://bootsnipp.com/snippets/bxDBA */
+$font-primary: 'Poppins',Arial, sans-serif;
+$primary: #46b5d1;
+
+body{
+	font-family: $font-primary;
+	font-size: 16px;
+	line-height: 1.8;
+	font-weight: normal;
+	background: #fafafa;
+	color: lighten($black,40%);
+}
+a {
+	transition: .3s all ease;
+	color: $primary;
+	&:hover, &:focus {
+		text-decoration: none !important;
+		outline: none !important;
+		box-shadow: none;
+	}
+}
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+	line-height: 1.5;
+	font-weight: 400;
+	font-family: $font-primary;
+	color: $black;
+}
+
+.bg-primary{
+	background: $primary !important;
+}
+
+#cImage{
+width: 25vw;
+height: 70vh;
+}
+#contact{
+background-color: white;
+margin-left: 0%;
+width: 102.5%;
+}
