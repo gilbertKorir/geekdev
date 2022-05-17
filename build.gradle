@@ -12,6 +12,8 @@ repositories {
     mavenCentral()
 }
 
+mainClassName = 'App'
+
 dependencies {
     testImplementation 'junit:junit:4.13'
     implementation 'org.sql2o:sql2o:1.6.0'

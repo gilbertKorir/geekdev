@@ -5,73 +5,142 @@
         <title>{{#block "title"}}Blog{{/block}}</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-        <link rel='stylesheet' href='/app.css'>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+        <link rel='stylesheet' href='/index.css'>
     </head>
-    <body>
-    <!--Begin main template-->
-    <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <body >
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/logo.png" alt="Our logo"> <a class="nav-link active" aria-current="page" href="#">Geeks' Farm</a>
+            </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <a class="nav-link" href="#">Android</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link" href="#">Full Stack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Career</a>
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="#">Sign up</a>
                 </form>
             </div>
-        </div>
     </nav>
     <!-- the nav bar -->
-
     <!--the end of nav bar-->
-    <div class="container">
-        <div class="page-header" style="text-align:center;">
-            <h1 style="color:white"> Welcome to wildfire tracking web application! <small> </small> </h1>
-
-        </div>
-        <div class="col-md-12">
+        <div class="container-fluid">
             {{#block "content"}}
 
             {{/block}}
         </div>
-
-    </div>
     <!--End main template-->
     {{#block "footer"}}
         <footer class="footer">
-            <div class="container" style="text-align:center;font-size:20px;" >
-                <h1 class="text-muted" style="color:white"> My wildlife_fire tracking web Application! </h1>
+            <div class="container bottom_border">
+                <div class="row">
+                    <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                        <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                        <!--headin5_amrc-->
+                        <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        <p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>
+                        <p><i class="fa fa-phone"></i>  +91-9999878398  </p>
+                        <p><i class="fa fa fa-envelope"></i> info@example.com  </p>
+
+
+                    </div>
+
+
+                    <div class=" col-sm-4 col-md  col-6 col">
+                        <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                        <!--headin5_amrc-->
+                        <ul class="footer_ul_amrc">
+                            <li><a href="http://webenlance.com">Image Rectoucing</a></li>
+                            <li><a href="http://webenlance.com">Clipping Path</a></li>
+                            <li><a href="http://webenlance.com">Hollow Man Montage</a></li>
+                            <li><a href="http://webenlance.com">Ebay & Amazon</a></li>
+                            <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                            <li><a href="http://webenlance.com">Image Cropping</a></li>
+                        </ul>
+                        <!--footer_ul_amrc ends here-->
+                    </div>
+
+
+                    <div class=" col-sm-4 col-md  col-6 col">
+                        <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                        <!--headin5_amrc-->
+                        <ul class="footer_ul_amrc">
+                            <li><a href="http://webenlance.com">Remove Background</a></li>
+                            <li><a href="http://webenlance.com">Shadows & Mirror Reflection</a></li>
+                            <li><a href="http://webenlance.com">Logo Design</a></li>
+                            <li><a href="http://webenlance.com">Vectorization</a></li>
+                            <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                            <li><a href="http://webenlance.com">Image Cropping</a></li>
+                        </ul>
+                        <!--footer_ul_amrc ends here-->
+                    </div>
+
+
+                    <div class=" col-sm-4 col-md  col-12 col">
+                        <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+                        <!--headin5_amrc ends here-->
+
+                        <ul class="footer_ul2_amrc">
+                            <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                            <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                            <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                        </ul>
+                        <!--footer_ul2_amrc ends here-->
+                    </div>
+                </div>
             </div>
+
+
+            <div class="container">
+                <ul class="foote_bottom_ul_amrc">
+                    <li><a href="http://webenlance.com">Home</a></li>
+                    <li><a href="http://webenlance.com">About</a></li>
+                    <li><a href="http://webenlance.com">Services</a></li>
+                    <li><a href="http://webenlance.com">Pricing</a></li>
+                    <li><a href="http://webenlance.com">Blog</a></li>
+                    <li><a href="http://webenlance.com">Contact</a></li>
+                </ul>
+                <!--foote_bottom_ul_amrc ends here-->
+                <p class="text-center">Copyright @2017 | Designed With by <a href="#">Your Company Name</a></p>
+
+                <ul class="social_footer_ul">
+                    <li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="http://webenlance.com"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="http://webenlance.com"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+                <!--social_footer_ul ends here-->
+            </div>
+
         </footer>
     {{/block}}
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
     </html>
 {{/block}}
