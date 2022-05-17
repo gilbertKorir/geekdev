@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/mdb.min.css">
 </head>
 <body>
-<h1 class="title">Become a collaborator</h1>
+
 <img src="/images/geeks.jpg" alt="">
 <div class="container-fluid">
     <ul class="nav aqua-gradient py-4 mb-4 font-weight-bold z-depth-1">
@@ -18,11 +18,10 @@
             <form>
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="email" class="form-control" id="name">
+                    <input type="text" class="form-control" id="name">
                 </div>
                 <div class="mb-3">
                     <label for="language" class="form-label">Select Language</label>
-{{!--                    <input type="language" class="form-control" id="language">--}}
                     <select class="form-select">
                         <option selected>Select</option>
                         <option value="1">Python</option>
@@ -39,13 +38,13 @@
                 </div>
 
                 <div class="mb-3">
-                    <p>If not listed input the language in the field below..</p>
-                    <input type="language" class="form-control" id="language" placeholder="language">
+                    <p>**If not listed input the language in the field below</p>
+                    <input type="text" class="form-control" id="language" placeholder="language">
                 </div>
 
                 <div class="mb-3">
                     <label for="Contact" class="form-label">Contact</label>
-                    <input type="contact" class="form-control" id="contact">
+                    <input type="number" class="form-control" id="contact">
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input">
@@ -55,6 +54,14 @@
             </form>
         </div>
     </ul>
+</div>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text"> Join Other in making a Difference</p>
+    </div>
 </div>
 
 </body>

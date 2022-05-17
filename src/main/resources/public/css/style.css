@@ -3,9 +3,15 @@ body{
 }
 
 .title{
-    text-align: center;
+    margin-left: 80px;
     margin-top: 40px;
 }
 .jumbotron{
     margin-left: 50px;
+}
+.jumbotron2{
+    margin-left: 90px;
+}
+.card{
+    margin-left: 90vh;
 }
