@@ -2,11 +2,11 @@
 box-sizing: border-box;
 margin:o;
 padding:0;
-background: linear-gradient(to right top, #da4c9d, #cc5eb5, #b96fc9, #a47ed8, #8d8be1, #7497ea, #58a2ee, #3bacee, #00b8ec, #00c3e5, #00ccd9, #39d4ca);
-background-repeat: no-repeat;
 }
 body{
 height: 100vh;
+ background: linear-gradient(to right top, #da4c9d, #cc5eb5, #b96fc9, #a47ed8, #8d8be1, #7497ea, #58a2ee, #3bacee, #00b8ec, #00c3e5, #00ccd9, #39d4ca);
+ background-repeat: no-repeat;
 }
 
 .navbar-nav {
@@ -31,7 +31,26 @@ height: 100vh;
  .student{
  height:100vh;
  background: linear-gradient(to right top, #da4c9d, #cc5eb5, #b96fc9, #a47ed8, #8d8be1, #7497ea, #58a2ee, #3bacee, #00b8ec, #00c3e5, #00ccd9, #39d4ca);
- background-repeat: no-repeat;
+  background-repeat: no-repeat;
+
+
  }
+.stud{
+height:100vh;
+ background-image:url("/images/and4.jpeg");
+ background-repeat: no-repeat;
+ background-size:cover;
+ background-position:center;
+display:grid;
+place-items:center;
+color: white;
+font-size:25px;
+opacity:0.3;
+}
+#myForm input{
+padding: 5px;
+width: 400px;
+border-radius: 5px;
+border:none;
 
-
+}
