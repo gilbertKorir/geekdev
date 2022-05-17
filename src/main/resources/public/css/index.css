@@ -4,8 +4,9 @@ margin:o;
 padding:0;
 }
 body{
-height: 100vh;
- background: linear-gradient(to right top, #da4c9d, #cc5eb5, #b96fc9, #a47ed8, #8d8be1, #7497ea, #58a2ee, #3bacee, #00b8ec, #00c3e5, #00ccd9, #39d4ca);
+overflow-y:auto;
+  background-attachment: fixed;
+ background-image: linear-gradient(to right top, #da4c9d, #cc5eb5, #b96fc9, #a47ed8, #8d8be1, #7497ea, #58a2ee, #3bacee, #00b8ec, #00c3e5, #00ccd9, #39d4ca);
  background-repeat: no-repeat;
  color: white;
 }
@@ -73,3 +74,48 @@ width: 400px;
 border-radius: 5px;
 border:none;
 }
+#myForm1 input{
+padding: 5px;
+width: 300px;
+border-radius: 5px;
+border:none;
+}
+html {
+  scroll-behavior: smooth;
+}
+.java{
+color: black;
+background-color: transparent;
+padding-top:200px;
+ scroll-behavior: smooth;
+
+}.android{
+color: black;
+background-color: transparent;
+padding-top:200px;
+ scroll-behavior: smooth
+}
+.spark{
+ scroll-behavior: smooth
+}
+.theprojects{
+display: flex;
+flex-direction:row;
+}
+.quote{
+height: 270px;
+margin-top:260px;
+position: fixed;
+right: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
