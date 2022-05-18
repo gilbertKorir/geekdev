@@ -109,8 +109,24 @@ position: fixed;
 right: 0;
 
 }
+.card{
+transition: all 1s ease-in-out;
+}
+.card:hover {
+   transform: translateX(5px) translateY(5px);
+ }
+ .head2{
+ background-color:rgba(0,0,0,0.5);
+ }
 
-
+.proj input::placeholder,.proj input{
+color: white;
+outline:none;
+}
+.boun{
+@keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-50px); } }
+#demo { animation: bounce 0.8s infinite alternate; }
+}
 
 
 

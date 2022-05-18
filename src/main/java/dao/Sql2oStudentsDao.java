@@ -28,7 +28,6 @@ public class Sql2oStudentsDao implements StudentsDao {
                     .executeUpdate()
                     .getKey();
             students.setId(id);
-            System.out.println("my id"+id);
         }catch (Sql2oException e){
             System.out.println(e.getMessage());
         }

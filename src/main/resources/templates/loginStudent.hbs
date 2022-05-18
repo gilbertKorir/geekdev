@@ -10,9 +10,9 @@
 <body>
 <div class="container-fluid student justify-content-center">
     <div class="row">
-        <div class="col logstud">
-            <div class="form-popup" id="myForm">
-                <form name="myform" class="form-container">
+        <div class="col logstud" id="hide1">
+            <div class="form-popup" id="myForm" >
+                <form name="myform"  class="form-container" id="log">
                     <h3 class="text-center pt-3"><a style="color:black;" href="/">Home</a></h3>
 
                     <h4 class="pt-5"><span>Log</span> in</h4><br>
@@ -22,16 +22,25 @@
 
                     <label for="psw"><b>Password</b></label><br>
                     <input type="password" placeholder="Enter Password" name="psw" required><br><br>
+<!--                    <button onclick="er()" id="logbtn" class="btn btn-success">Submit</button>-->
+                    <input type="button" name="answer" value="Log in" onclick="er()" /><br><br><br>
 
-
-                    <a href="" class="bg-success" style="width: 70px; margin-left:150px; border:2px solid transparent; padding:6px; text-decoration:none; color: white;"><button id="btn">Submit</button></a><br>
+                    <div class="col-md-12" id="show1" style="display:none;">
+                        <a href="/projects/students"><input class="bg-success text-white" type="button" name="answer" value="Collaborate!" /></a>
+                    </div>
                 </form>
             </div>
 
         </div>
     </div>
+<!--    <div class="row">-->
+<!--        <div class="col-md-12" id="show1" style="display:none;">-->
+<!--            <a href=""><input type="button" name="answer" value="Collaborate!" /></a>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
-<script src="/js/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="/js/login.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </body>
 </html>
