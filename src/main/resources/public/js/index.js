@@ -32,7 +32,11 @@ function more3() {
 }
 
 
+ document.getElementById("btn").onclick = function () {
+        location.href = "/projects/students";}
 
+ document.getElementById("btn1").onclick = function () {
+        location.href = "/projects/developers";}
 
 
 
@@ -91,5 +95,3 @@ function more3() {
 ////}
 
 //
- document.getElementById("btn").onclick = function () {
-        location.href = "/projects/developer";}

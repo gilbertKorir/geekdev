@@ -1,5 +1,5 @@
-CREATE DATABASE android;
-\c android;
+CREATE DATABASE geek_collaborators;
+\c geek_collaborators;
 
 CREATE TABLE students (
 id SERIAL PRIMARY KEY,
@@ -23,4 +23,4 @@ project_code VARCHAR
 );
 
 
-CREATE DATABASE android_test WITH TEMPLATE android;
+CREATE DATABASE geek_collaborators_test WITH TEMPLATE geek_collaborators;

@@ -32,9 +32,13 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "loginDeveloper.hbs");
         }, new HandlebarsTemplateEngine());
-        get("/projects/developer", (request, response) -> {
+        get("/projects/students", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "studentProjects.hbs");
+        }, new HandlebarsTemplateEngine());
+        get("/projects/developers", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "developerProjects.hbs");
         }, new HandlebarsTemplateEngine());
 
     }
