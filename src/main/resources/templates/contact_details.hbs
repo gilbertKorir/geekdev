@@ -1,0 +1,27 @@
+{{#partial "content"}}
+
+    <div class="container-fluid text-start mx-auto" id="client">
+
+        <div class="card mb-3 mx-auto" style="max-width: 640px;">
+            <div class="row">
+                <div class="col-md-8">
+                    {{#each contact}}
+                        <div class="card-body">
+                            <h5 class="card-title">{{name}}</h5>
+                            <p class="card-text">
+                            <p>Client's Name: {{name}}</p>
+                            <p>Client's Email: {{email}}</p>
+                            <p>Message Title: {{subject}}</p>
+                            <p>Content: {{message}}</p>
+                            <p class="card-footer">
+                            <p><a class="btn btn-danger justify-content-left" href="/contact/{{id}}/delete">delete {{name}}</a> </p>
+                            <hr>
+                        </div>
+                    {{/each}}
+                    <p><a class="btn btn-danger justify-content-left" href="/contact/delete">Clear Contacts</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+{{> layout.hbs}}

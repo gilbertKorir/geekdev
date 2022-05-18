@@ -5,8 +5,8 @@ background-image: linear-gradient(to right top, #DA4C9D, #CC5EB5, #B96FC9, #A47E
 , #00CCD9, #39D4CA);
 background-repeat: no-repeat;
 background-size: cover;
-margin-left: 11.4%;
-margin-right: 11.4%;
+margin-left: 11%;
+margin-right: 11%;
 }
 
 .container-fluid{
@@ -27,7 +27,7 @@ font-size: 120%;
 }
 
 #carouselExampleCaptions img{
-height: 60vh;
+height: 80vh;
 }
 
 #carouselExampleCaptions{
@@ -151,7 +151,18 @@ color: red;
 font-size: bolder;
 }
 
+.work h4{
+font-family: 'Oleo Script', cursive;
+color: red;
+font-size: bolder;
+}
+#services h6{
+margin: 3%;
+}
 
+.work{
+width: 102.5%;
+}
 #services img{
 border: 1px solid white;
 border-radius: 50%;
@@ -168,7 +179,7 @@ margin-bottom: 2%;
 margin-left:0%;
 background-color: white;
 text-align: center;
-width: 102.5%;
+width: 102.4%;
 }
 
 #partners img{
@@ -210,6 +221,13 @@ font-size: bolder;
 }
 #bats{
 border-radius: 50%;
+}
+
+#client{
+background-image: url('/assets/serveone.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+width: 102.38%
 }
 
 
