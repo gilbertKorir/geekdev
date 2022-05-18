@@ -13,8 +13,8 @@ public class fullstackCollaborators {
     public fullstackCollaborators(String name, String language, String contact, String role) {
         this.name = name;
         this.language = language;
-        this.contact = contact;
         this.role = role;
+        this.contact = contact;
         this.id = id;
     }
 

@@ -1,4 +1,4 @@
-
+{{#partial "content"}}
 <head>
     <title>geekFarm</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="/mdb.min.css">
 </head>
 <body>
-
-<img src="/images/geeks.jpg" alt="">
+<h1>Become a Fullstack Collabo</h1>
+<img src="../geeks.jpg" alt="">
 <div class="container-fluid">
     <ul class="nav aqua-gradient py-4 mb-4 font-weight-bold z-depth-1">
 
@@ -43,6 +43,11 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="name" class="form-label">Role</label>
+                    <input type="text" class="form-control" id="role">
+                </div>
+
+                <div class="mb-3">
                     <label for="Contact" class="form-label">Contact</label>
                     <input type="number" class="form-control" id="contact">
                 </div>
@@ -50,7 +55,7 @@
                     <input type="checkbox" class="form-check-input">
                     <label class="form-check-label" for="exampleCheck1">Remember me?</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="button">Submit</button>
             </form>
         </div>
     </ul>
@@ -58,10 +63,12 @@
 
 <div class="card" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text"> Join Other in making a Difference</p>
+        <h5 class="card-title">"Alone we can do so little; together we can do so much."</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Hellen Keller</h6>
     </div>
 </div>
 
 </body>
+{{/partial}}
+
+{{> layout.hbs}}
