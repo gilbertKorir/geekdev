@@ -29,5 +29,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model,"contact.hbs");
         },new HandlebarsTemplateEngine());
+
+
     }
 }
