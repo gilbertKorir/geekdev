@@ -27,16 +27,16 @@ font-size: 120%;
 }
 
 #carouselExampleCaptions img{
-height: 60vh;
+height: 74vh;
 }
 
 #carouselExampleCaptions{
-width: 102.4%;
+width: 102.408%;
 }
 
 #carouselExampleCaptions h5{
 font-family: 'Oleo Script', cursive;
-color: red;
+color: #464531;
 font-size: bolder;
 }
 
@@ -141,17 +141,28 @@ text-align: center;
 
 #services h4{
 font-family: 'Oleo Script', cursive;
-color: red;
+color: #464531;
 font-size: bolder;
 }
 
 #partners h4{
 font-family: 'Oleo Script', cursive;
-color: red;
+color: #464531;
 font-size: bolder;
 }
 
+.work h4{
+font-family: 'Oleo Script', cursive;
+color: #464531;
+font-size: bolder;
+}
+#services h6{
+margin: 3%;
+}
 
+.work{
+width: 102.5%;
+}
 #services img{
 border: 1px solid white;
 border-radius: 50%;
@@ -168,7 +179,7 @@ margin-bottom: 2%;
 margin-left:0%;
 background-color: white;
 text-align: center;
-width: 102.5%;
+width: 102.4%;
 }
 
 #partners img{
@@ -194,7 +205,7 @@ text-align: center;
 #mycontact h4{
 margin-top: 5%;
 font-family: 'Oleo Script', cursive;
-color: red;
+color: #464531;
 font-size: bolder;
 }
 
@@ -205,11 +216,45 @@ background-color: white;
 #contactus h4{
 margin-top: 5%;
 font-family: 'Oleo Script', cursive;
-color: red;
+color: #464531;
 font-size: bolder;
 }
+
 #bats{
 border-radius: 50%;
 }
+
+#client{
+background-image: url('/assets/serveone.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+width: 102.5%
+}
+
+#partners a{
+text-decoration: none;
+border-radius: 50%;
+margin-bottom: 6%
+}
+
+#details h5{
+margin-top: 5%;
+font-family: 'Oleo Script', cursive;
+color: #464531;
+font-size: bolder;
+text-align: center;
+}
+
+#details p{
+margin-top: 5%;
+font-family: 'Oleo Script', cursive;
+color: #464531;
+}
+
+.details {
+color: dark;
+font-family: sans serif;
+}
+
 
 

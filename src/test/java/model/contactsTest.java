@@ -2,42 +2,41 @@ package model;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class contactsTest {
 
-    //public class SightingTest {
-//
-//    @Test
-//    public void getNameReturnsCorrectName_String() throws Exception {
-//        Sighting newSighting = setNewSighting();
-//        assertEquals("John", newSighting.getName());
-//    }
-//
-//    @Test
-//    public void getNameReturnsCorrectLocation_String() {
-//        Sighting newSighting = setNewSighting();
-//        assertEquals("River", newSighting.getLocation());
-//    }
-//
-//    @Test
-//    public void getNameReturnsCorrectAnimal_int() {
-//        Sighting newSighting = setNewSighting();
-//        assertEquals(34, newSighting.getAnimId());
-//    }
-//
-//    @Test
-//    public void getNameReturnsCorrectEndangered_int() {
-//        Sighting newSighting = setNewSighting();
-//        assertEquals(21, newSighting.getEndangeredId());
-//    }
-//
-//    // the helper classes
-//
-//    public Sighting setNewSighting(){
-//        return new Sighting("John", "River", 34, 21);
-//    }
+    @Test
+    public void getNameReturnsCorrectName_String() throws Exception {
+        Contacts newContact = setNewContact();
+        assertEquals("John", newContact.getName());
+    }
+
+    @Test
+    public void getEmailReturnsCorrectEmail_String() {
+        Contacts newContact = setNewContact();
+        assertEquals("example@gmail.com", newContact.getEmail());
+    }
+
+    @Test
+    public void getSubjectReturnsCorrectSubject_int() {
+        Contacts newContact = setNewContact();
+        assertEquals("jobs", newContact.getSubject());
+    }
+
+    @Test
+    public void getMessageReturnsCorrectMessage_int() {
+        Contacts newContact = setNewContact();
+        assertEquals("clarification", newContact.getMessage());
+    }
+
+    // the helper classes
+
+    public Contacts setNewContact(){
+        return new Contacts("John", "example@gmail.com","jobs","clarification");
+    }
 
     @Before
     public void setUp() throws Exception {

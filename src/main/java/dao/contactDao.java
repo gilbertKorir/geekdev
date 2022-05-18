@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface contactDao {
 
-    // create new contact
-    void create();
+
     // list all contacts
     List<Contacts> getAllContacts();
+
 
     // create a new contacts
     void addContacts(Contacts contacts);
@@ -23,7 +23,5 @@ public interface contactDao {
 
     // delete all contacts.
     void deleteAllContacts();
-
-    // more methods will added as the application grows.
 
 }
