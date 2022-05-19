@@ -23,10 +23,11 @@
         <div class="col-md-12 pt-3">
             {{#if collaboration}}
                 {{#each collaboration as |r|}}
-                    <div class="card" style="width: 27rem; color:black; background-color:transparent;border:2px solid white;">
+                    <div class="card mb-3" style="width: 27rem; color:black; background-color:transparent;border:2px solid white;">
 <!--                        <img class="card-img-top" src="..." alt="Card image cap">-->
                         <div class="card-body">
-                            <p class="card-text">Github: {{r.username}}</p>
+                            <p class="card-text">Github Username: {{r.username}}</p>
+                            <hr style="color: white;">
                             <p class="card-text">CV: {{r.resume}}</p>
                             <p class="card-text">Project working on: {{r.project_code}}</p>
                             <p class="card-text">Start Date{{r.date}}</p>

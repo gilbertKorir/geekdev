@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 CREATE DATABASE geek_collaborators;
 \c geek_collaborators
 
@@ -12,7 +12,6 @@ languages VARCHAR
 );
 
 CREATE DATABASE geek_collaborators_test WITH TEMPLATE geek_collaborators;
-=======
 CREATE DATABASE fullstack_collaborators;
 \c fullstack_collaborators;
 CREATE TABLE fullstack_collaborators (name varchar, language varchar, contact int, role varchar, id PRIMARY KEY;
@@ -56,4 +55,3 @@ CREATE TABLE contacts(
 
 CREATE DATABASE geek_collaborators_test WITH TEMPLATE geek_collaborators;
 
->>>>>>> b1b7f4c45133ef6171e84127d0dabd1ce20e7123
