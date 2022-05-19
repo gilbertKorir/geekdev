@@ -1,5 +1,3 @@
-import dao.fullstackDao;
-import model.fullstack;
 import dao.Sql2oContact;
 import model.Contacts;
 import org.sql2o.Sql2o;
@@ -90,33 +88,6 @@ public class App {
             return null;
         }, new HandlebarsTemplateEngine());
 
-
-        get("/fullstack",(request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            return new ModelAndView(model, "fullstack-form.hbs");
-        },new HandlebarsTemplateEngine());
-
-        get("/fullstackCollaborators",(request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            return new ModelAndView(model, "fullstack.hbs");
-        },new HandlebarsTemplateEngine());
-
-        get("/fullstack/new",(request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            return new ModelAndView(model, "fullstack.hbs");
-        },new HandlebarsTemplateEngine());
-
-
-        //process new contact form
-        post("/fullstack",(request,response)-> {
-            Map<String, Object> model = new HashMap<>();
-            String name = request.queryParams("name");
-            String owner = request.queryParams("owner");
-            String owner_contact = request.queryParams("owner_contact");
-            fullstack fullstack = new fullstack(name, owner, owner_contact);
-            response.redirect("/");
-            return null;
-        },new HandlebarsTemplateEngine());
 
 
     }

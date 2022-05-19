@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface contactDao {
 
+    //CRUD
 
     // list all contacts
     List<Contacts> getAllContacts();
