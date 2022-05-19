@@ -1,3 +1,11 @@
+CREATE DATABASE fullstack_collaborators;
+\c fullstack_collaborators;
+CREATE TABLE fullstack_collaborators (name varchar, language varchar, contact int, role varchar, id PRIMARY KEY;
+
+CREATE DATABASE fullstack;
+\c fullstack;
+CREATE TABLE fullstack (name varchar, owner varchar, owner_contact varchar, id PRIMARY KEY;
+
 CREATE DATABASE geek_collaborators;
 
 \c geek_collaborators;
@@ -12,3 +20,4 @@ CREATE TABLE contacts(
 );
 
 CREATE DATABASE geek_collaborators_test WITH TEMPLATE geek_collaborators;
+

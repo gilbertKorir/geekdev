@@ -1,14 +1,28 @@
+<<<<<<< HEAD
+import dao.fullstackDao;
+import model.fullstack;
+=======
 import dao.Sql2oContact;
 import model.Contacts;
 import org.sql2o.Sql2o;
+>>>>>>> a09bf4d972af56f83070ea730577d7772a9e1f82
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import static spark.Spark.*;
+//import static spark.SparkBase.staticFileLocation;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.*;
+
 
 public class App {
     static int getHerokuAssignedPort() {
@@ -19,6 +33,70 @@ public class App {
         return 4567;
     }
     public static void main(String[] args) {
+
+        staticFileLocation("/public");
+        String layout = "templates/layout.hbs";
+
+        ProcessBuilder process = new ProcessBuilder();
+        Integer port;
+
+        if (process.environment().get("PORT") != null) {
+            port = Integer.parseInt(process.environment().get("PORT"));
+        } else {
+            port = 4567;
+        }
+        port(port);
+
+        get("/",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "index.hbs");
+        },new HandlebarsTemplateEngine());
+
+        get("/fullstack",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "fullstack-form.hbs");
+        },new HandlebarsTemplateEngine());
+
+        get("/fullstackCollaborators",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "fullstack.hbs");
+        },new HandlebarsTemplateEngine());
+
+        get("/fullstack/new",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "fullstack.hbs");
+        },new HandlebarsTemplateEngine());
+
+
+//        post("/fullstack", (request, response) -> {
+//            Map<String,Object> model=new HashMap<String, Object>();
+//            String name = request.queryParams("name");
+//            String owner = request.queryParams("owner");
+//            String owner_contact = request.queryParams("owner_contact");
+//        });
+
+        //process new contact form
+        post("/fullstack",(request,response)-> {
+            Map<String, Object> model = new HashMap<>();
+            String name = request.queryParams("name");
+            String owner = request.queryParams("owner");
+            String owner_contact = request.queryParams("owner_contact");
+            fullstack fullstack = new fullstack(name, owner, owner_contact);
+            fullstackDao.addFullstack(fullstack);
+            response.redirect("/");
+            return null;
+        },new HandlebarsTemplateEngine());
+
+
+//        post("fullstackCollaborators/new",((request, response) -> {
+//          Map<String,Object> model=new HashMap<String, Object>();
+//          String name=request.queryParams("name");
+//          String language=request.queryParams("language");
+//          String contact=request.queryParams("contact");
+//          String role=request.queryParams("role");
+//
+//        })
+
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
 
@@ -70,6 +148,8 @@ public class App {
             return new ModelAndView(model,"contact_details.hbs");
         },new HandlebarsTemplateEngine());
 
+<<<<<<< HEAD
+=======
         //clear all contacts
         get("/contact/delete",(request, response)->{
             Map<String,Object>model = new HashMap<>();
@@ -88,5 +168,6 @@ public class App {
             return null;
         }, new HandlebarsTemplateEngine());
 
+>>>>>>> a09bf4d972af56f83070ea730577d7772a9e1f82
     }
 }
