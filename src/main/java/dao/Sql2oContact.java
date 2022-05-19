@@ -25,14 +25,9 @@ public class Sql2oContact implements contactDao{
     }
 
     @Override
-    public void create() {
-
-    }
-
-    @Override
     public List<Contacts> getAllContacts() {
         getDrivers();
-        String sql = "SELECT * FROM sightings";
+        String sql = "SELECT * FROM contacts";
         try (Connection connection = sql2o.open()){
             return connection.createQuery(sql)
                     .executeAndFetch(Contacts.class);
@@ -42,7 +37,7 @@ public class Sql2oContact implements contactDao{
     @Override
     public void addContacts(Contacts contacts) {
         getDrivers();
-        String sql = "INSERT INTO sightings (name,location,animId,endangeredId) VALUES (:name,:location,:animId,:endangeredId)";
+        String sql = "INSERT INTO contacts (name,email,subject,message) VALUES (:name, :email, :subject, :message)";
         try(Connection conn = sql2o.open()){
             int id = (int) conn.createQuery(sql,true)
                     .bind(contacts)
@@ -58,7 +53,7 @@ public class Sql2oContact implements contactDao{
     public Contacts findSightingById(int id) {
         getDrivers();
         try(Connection con = sql2o.open()) {
-            return con.createQuery("SELECT * FROM sightings WHERE id = :id")
+            return con.createQuery("SELECT * FROM contacts WHERE id = :id")
                     .addParameter("id", id)
                     .executeAndFetchFirst(Contacts.class);
         }
@@ -67,7 +62,7 @@ public class Sql2oContact implements contactDao{
     @Override
     public void deleteById(int id) {
         getDrivers();
-        String sql = "DELETE FROM sightings WHERE id = :id";
+        String sql = "DELETE FROM contacts WHERE id = :id";
         try(Connection conn = sql2o.open()){
             conn.createQuery(sql)
                     .addParameter("id",id)
@@ -80,7 +75,7 @@ public class Sql2oContact implements contactDao{
     @Override
     public void deleteAllContacts() {
         getDrivers();
-        String sql = "DELETE from sightings";
+        String sql = "DELETE from contacts";
         try (Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .executeUpdate();
