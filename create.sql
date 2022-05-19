@@ -13,13 +13,14 @@ id SERIAL PRIMARY KEY,
 name VARCHAR,
 email VARCHAR,
 password VARCHAR,
-resume VARCHAR
 );
 
 CREATE TABLE collaboration (
 id SERIAL PRIMARY KEY,
 username VARCHAR,
-project_code VARCHAR
+resume VARCHAR,
+project_code VARCHAR,
+date date
 );
 
 

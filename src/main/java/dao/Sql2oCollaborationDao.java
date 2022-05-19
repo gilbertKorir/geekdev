@@ -16,7 +16,7 @@ public class Sql2oCollaborationDao implements CollaborationDao{
 
     @Override
     public void add(Collaboration collaboration) {
-        String query = "INSERT INTO collaboration (username,project_code) values(:username,:project_code)";
+        String query = "INSERT INTO collaboration (username,resume,project_code,date) values(:username,:resume,:project_code,:date)";
 
         try (Connection conn = sql2o.open()) {
             int id = (int) conn.createQuery(query, true)

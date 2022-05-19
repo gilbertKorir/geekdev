@@ -16,7 +16,7 @@ public class Sql2oDevelopersDao implements DevelopersDao {
 
     @Override
     public void add(Developers developers) {
-        String query = "INSERT INTO developers (name,email,password, resume) values(:name,:email,:password,:resume)";
+        String query = "INSERT INTO developers (name,email,password) values(:name,:email,:password)";
         try (Connection conn = sql2o.open()) {
             int id = (int) conn.createQuery(query, true)
                     .bind(developers)

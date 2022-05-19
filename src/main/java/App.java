@@ -9,6 +9,7 @@ import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -86,8 +87,7 @@ public class App {
             String name = request.queryParams("name");
             String email = request.queryParams("email");
             String password = request.queryParams("password");
-            String resume = request.queryParams("resume");
-            Developers developers = new Developers(name, email, password, resume);
+            Developers developers = new Developers(name, email, password);
             sql2oDevelopersDao.add(developers);
             return new ModelAndView(model, "developer-form.hbs");
         }, new HandlebarsTemplateEngine());
@@ -95,8 +95,10 @@ public class App {
         post("/projects/developers/new", (request, response) -> {
             Map<String, Objects> model = new HashMap<String, Objects>();
             String username = request.queryParams("username");
+            String resume = request.queryParams("resume");
             String project_code = request.queryParams("project_code");
-            Collaboration collaboration = new Collaboration(username,project_code);
+            String date = request.queryParams("date");
+            Collaboration collaboration = new Collaboration(username,resume, project_code, new Date());
             sql2oCollaborationDao.add(collaboration);
             return new ModelAndView(model, "developerProjects.hbs");
         }, new HandlebarsTemplateEngine());

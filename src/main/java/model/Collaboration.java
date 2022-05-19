@@ -1,15 +1,21 @@
 package model;
 
+import java.util.Date;
 import java.util.Objects;
 
 public class Collaboration {
     private int id;
     private String username;
-    private String project_code;
 
-    public Collaboration(String username, String project_code) {
+    private String resume;
+    private String project_code;
+    private Date date;
+
+    public Collaboration(String username, String resume, String project_code, Date date) {
         this.username = username;
+        this.resume = resume;
         this.project_code = project_code;
+        this.date = date;
     }
 
     public int getId() {
@@ -28,6 +34,14 @@ public class Collaboration {
         this.username = username;
     }
 
+    public String getResume() {
+        return resume;
+    }
+
+    public void setResume(String resume) {
+        this.resume = resume;
+    }
+
     public String getProject_code() {
         return project_code;
     }
@@ -36,16 +50,24 @@ public class Collaboration {
         this.project_code = project_code;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Collaboration)) return false;
         Collaboration that = (Collaboration) o;
-        return id == that.id && Objects.equals(username, that.username) && Objects.equals(project_code, that.project_code);
+        return id == that.id && Objects.equals(username, that.username) && Objects.equals(resume, that.resume) && Objects.equals(project_code, that.project_code) && Objects.equals(date, that.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, project_code);
+        return Objects.hash(id, username,resume, project_code,date);
     }
 }
