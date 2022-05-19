@@ -71,7 +71,10 @@ function more6() {
 //        location.href = "/projects/developers";}
 
 
-
+function fg(){
+var name = document.getElementById("name").value;
+alert("Hey " + name + " wait for 24 hours and we will reach out to you concerning the collaboration. Thanks")
+}
 
 
 

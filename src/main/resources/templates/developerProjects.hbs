@@ -15,11 +15,11 @@
             <div class="col-md-12">
                 <h4 class="pt-2 pb-2">Please fill this form for easy tracking of your collaboration</h4>
                 <form action="/projects/developers/new" method="post" id="myForm1" class="proj">
-                    <label for="username"><b>Github Username: </b></label>&nbsp;<input style="background-color:transparent; border:1px solid white;" type="text" placeholder="Your github username..." name="username" required>&nbsp;&nbsp;
+                    <label for="username"><b>Github Username: </b></label>&nbsp;<input style="background-color:transparent; border:1px solid white;" type="text" placeholder="Your github username..." name="username"  id="name" required>&nbsp;&nbsp;
                     <label for="resume"><b>Resume: </b></label>&nbsp;&nbsp;&nbsp;<input style="background-color:transparent; border:1px solid white;" type="file" placeholder="Upload you resume" name="resume" required><br><br>
                     <label for="project_code"><b>Project Code: </b></label><input style="background-color:transparent; border:1px solid white;" type="text" placeholder="Project Code eg. JS01" name="project_code" required>&nbsp;&nbsp;
                     <label for="date"><b>Start date: </b></label> <input style="background-color:transparent; border:1px solid white;" type="date" placeholder="Date you will start collaborating" name="date" required>
-                    <button type="submit" class="btn btn-success">Submit</button><br>
+                    <button type="submit" class="btn btn-success" onclick="fg()">Submit</button><br>
                 </form>
             </div>
         </div>

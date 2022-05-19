@@ -42,8 +42,6 @@ public class App {
         sql2oStudentsDao = new Sql2oStudentsDao(sql2o);
         sql2oDevelopersDao = new Sql2oDevelopersDao(sql2o);
         sql2oCollaborationDao = new Sql2oCollaborationDao(sql2o);
-
-
         Sql2oContact contactDao = new Sql2oContact(sql2o);
 
 
