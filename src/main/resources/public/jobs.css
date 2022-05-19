@@ -1,9 +1,4 @@
-*{
-  box-sizing: border-box;
-  margin:o;
-  padding:0;
-  background-color: #BBDFC5;
-  }
+
   /* body{
   height: 100vh;
    background: linear-gradient(to right top, #da4c9d, #cc5eb5, #b96fc9, #a47ed8, #8d8be1, #7497ea, #58a2ee, #3bacee, #00b8ec, #00c3e5, #00ccd9, #39d4ca);
@@ -29,7 +24,7 @@
   .search-box {
     position: absolute;
     top: 25%;
-    left: 50%;
+    left: 25%;
     transform: translate(-50%, -50%);
     background: #2F3640;
     height: 40px;

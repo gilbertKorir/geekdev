@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'Geek-Collaborator'
@@ -11,8 +12,11 @@ repositories {
     mavenCentral()
 }
 
+mainClassName = 'App'
+
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+
+    testImplementation 'junit:junit:4.13'
 
     implementation "com.sparkjava:spark-core:2.9.3"
     implementation 'com.sparkjava:spark-template-handlebars:2.7.1'
@@ -21,4 +25,5 @@ dependencies {
     implementation 'org.sql2o:sql2o:1.6.0'
     implementation group: 'com.h2database', name: 'h2', version: '1.4.191'
     implementation 'org.postgresql:postgresql:42.3.4';
+
 }
