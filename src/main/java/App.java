@@ -100,5 +100,10 @@ public class App {
             sql2oCollaborationDao.add(collaboration);
             return new ModelAndView(model, "developerProjects.hbs");
         }, new HandlebarsTemplateEngine());
+        get("/view/collaborators",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            model.put("collaboration",sql2oCollaborationDao.getAll());
+            return new ModelAndView(model,"collaborate-view.hbs");
+        },new HandlebarsTemplateEngine());
     }
 }
