@@ -8,16 +8,35 @@ import model.Students;
 
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+
+import java.util.*;
+
+import dao.Sql2oContact;
+import model.Contacts;
+import org.sql2o.Sql2o;
+import spark.ModelAndView;
+import spark.template.handlebars.HandlebarsTemplateEngine;
+
 import static spark.Spark.*;
 
 public class App {
 
-
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567;
+    }
     public static void main(String[] args) {
+
+        port(getHerokuAssignedPort());
+        staticFileLocation("/public");
+
+//
+//    public static void main(String[] args) {
+        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
+        Sql2o sql2o = new Sql2o(connect,"postgres","okello");
         Sql2oStudentsDao sql2oStudentsDao ;
         Sql2oDevelopersDao sql2oDevelopersDao;
         Sql2oCollaborationDao sql2oCollaborationDao;
@@ -25,6 +44,9 @@ public class App {
         sql2oStudentsDao = new Sql2oStudentsDao(sql2o);
         sql2oDevelopersDao = new Sql2oDevelopersDao(sql2o);
         sql2oCollaborationDao = new Sql2oCollaborationDao(sql2o);
+
+
+        Sql2oContact contactDao = new Sql2oContact(sql2o);
 
 
             /*----------------------------Consume API--------------------------------*/
@@ -94,6 +116,66 @@ public class App {
             model.put("collaboration",sql2oCollaborationDao.getAll());
             return new ModelAndView(model,"collaborate-view.hbs");
         },new HandlebarsTemplateEngine());
+
+
+        // String connection = "jdbc:postgresql://ec2-54-172-175-251.compute-1.amazonaws.com:5432/d19tsrp5ts9arv";
+//        Sql2o sql2o = new Sql2o(connection,"acutsmyrvfxroj","f6f2568b1bedb19e5723424cd139ea089f13b9effb3756dcc39ca0ba0196a631");
+
+
+        get("/",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model,"index.hbs");
+        },new HandlebarsTemplateEngine());
+
+
+        //display form receive clients data
+        get("/contact/new",(request,response)->{
+            Map<String, Object>model = new HashMap<>();
+            List<Contacts> contacts = contactDao.getAllContacts();
+            model.put("contact",connect);
+            return new ModelAndView(model,"contact.hbs");
+        },new HandlebarsTemplateEngine());
+
+        //process new contact form
+        post("/contact",(request,response)->{
+            Map<String, Object>model = new HashMap<>();
+            String name = request.queryParams("name");
+            String email = request.queryParams("email");
+            String subject = request.queryParams("subject");
+            String message = request.queryParams("message");
+            Contacts contacts = new Contacts(name, email, subject, message);
+            contactDao.addContacts(contacts);
+            response.redirect("/");
+            return null;
+        },new HandlebarsTemplateEngine());
+
+        // display all contacts
+        get("/contact",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Contacts> allContacts = contactDao.getAllContacts();
+            model.put("contact",allContacts);
+            return new ModelAndView(model,"contact_details.hbs");
+        },new HandlebarsTemplateEngine());
+
+        //clear all contacts
+        get("/contact/delete",(request, response)->{
+            Map<String,Object>model = new HashMap<>();
+            contactDao.deleteAllContacts();
+            response.redirect("/");
+            return null;
+        },new HandlebarsTemplateEngine());
+
+
+        //delete contact by Id
+        get("/contact/:id/delete",(request, response)->{
+            Map<String, Object>model = new HashMap<>();
+            int idOfContactToDelete = Integer.parseInt(request.params("id"));
+            contactDao.deleteById(idOfContactToDelete);
+            response.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
+
+
     }
 }
 
