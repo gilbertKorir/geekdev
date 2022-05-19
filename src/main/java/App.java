@@ -126,7 +126,7 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
             /*----------------------------Consume API--------------------------------*/
-            get("/", (request, response) ->{
+            get("/android", (request, response) ->{
                 Map<String, Object> model = new HashMap<String, Object>();
                 return new ModelAndView(model, "android.hbs");
             }, new HandlebarsTemplateEngine());
