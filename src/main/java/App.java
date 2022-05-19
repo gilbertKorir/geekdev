@@ -1,13 +1,22 @@
-<<<<<<< HEAD
+
+import DAO.JobsDao;
+import model.Contacts;
+import model.jobs;
+import org.sql2o.Sql2o;
+
+
 import dao.fullstackDao;
 import model.fullstack;
-=======
+
 import dao.Sql2oContact;
 import model.Contacts;
 import org.sql2o.Sql2o;
->>>>>>> a09bf4d972af56f83070ea730577d7772a9e1f82
+
+
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
+import DAO.*;
+import dao.*;
 
 
 import java.util.ArrayList;
@@ -18,7 +27,10 @@ import static spark.Spark.*;
 //import static spark.SparkBase.staticFileLocation;
 
 import java.util.HashMap;
+
+
 import java.util.List;
+
 import java.util.Map;
 
 import static spark.Spark.*;
@@ -97,8 +109,17 @@ public class App {
 //
 //        })
 
-        port(getHerokuAssignedPort());
-        staticFileLocation("/public");
+
+//        port(getHerokuAssignedPort());
+//        staticFileLocation("/public");
+
+
+        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
+        Sql2o sql2o = new Sql2o(connect,"chechesylvia","0718500898");
+
+        Sql2oJobsDao JobsDao = new Sql2oJobsDao(sql2o);
+
+
 
         // creating a db connection:
 
@@ -107,16 +128,19 @@ public class App {
 //        Sql2o sql2o = new Sql2o(connection,"acutsmyrvfxroj","f6f2568b1bedb19e5723424cd139ea089f13b9effb3756dcc39ca0ba0196a631");
 
 
-        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
-        Sql2o sql2o = new Sql2o(connect,"postgres","okello");
+//        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
+//        Sql2o sql2o = new Sql2o(connect,"postgres","okello");
+//
+//        Sql2oContact contactDao = new Sql2oContact(sql2o);
 
-        Sql2oContact contactDao = new Sql2oContact(sql2o);
 
 
         get("/",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model,"index.hbs");
         },new HandlebarsTemplateEngine());
+
+
 
 
         //display form receive clients data
@@ -141,6 +165,7 @@ public class App {
         },new HandlebarsTemplateEngine());
 
         // display all contacts
+
         get("/contact",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             List<Contacts> allContacts = contactDao.getAllContacts();
@@ -148,26 +173,81 @@ public class App {
             return new ModelAndView(model,"contact_details.hbs");
         },new HandlebarsTemplateEngine());
 
-<<<<<<< HEAD
-=======
-        //clear all contacts
-        get("/contact/delete",(request, response)->{
-            Map<String,Object>model = new HashMap<>();
-            contactDao.deleteAllContacts();
+
+
+//        get("/jobs", (request, response) -> {
+//            Map<String, Object> model = new HashMap<>();
+//            return new ModelAndView(model, "jobs.hbs");
+//        }, new HandlebarsTemplateEngine());
+
+        //display form receive clients data
+        get("/jobs/new",(request,response)->{
+            Map<String, Object>model = new HashMap<>();
+            List<jobs> jobs = JobsDao.getAll();
+            model.put("jobs", jobs);
+            return new ModelAndView(model,"jobs.hbs");
+        },new HandlebarsTemplateEngine());
+
+//process new contact form
+        post("/jobs",(request,response)->{
+            Map<String, Object>model = new HashMap<>();
+            String company = request.queryParams("company");
+            String title = request.queryParams("title");
+            String description = request.queryParams("description");
+            String duration = request.queryParams("duration");
+            String languages = request.queryParams("languages");
+            jobs jobs = new jobs(company, title, description, duration, languages);
+            JobsDao.add(jobs);
             response.redirect("/");
             return null;
         },new HandlebarsTemplateEngine());
 
+// display all contacts
+        get("/jobs",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<jobs> allJobs = JobsDao.getAll();
+            model.put("jobs",allJobs);
+            return new ModelAndView(model,"job-form.hbs");
+        },new HandlebarsTemplateEngine());
+
+//clear all jobs
+        get("/jobs/delete",(request, response)-> {
+                    Map<String, Object> model = new HashMap<>();
+                    JobsDao.deleteAll();
+                    return null;
+        },new HandlebarsTemplateEngine());
+//clear all contacts
+        get("/contact/delete",(request, response)->{
+            Map<String,Object>model = new HashMap<>();
+            contactDao.deleteAllContacts();
+
+            response.redirect("/");
+            return null;
+        },new HandlebarsTemplateEngine());
+
+
+
+//delete job by Id
+        get("/jobs/:id/delete",(request, response)->{
+            Map<String, Object>model = new HashMap<>();
+            int idOfJobToDelete = Integer.parseInt(request.params("id"));
+            JobsDao.deleteById(idOfJobToDelete);
+            return null;
+        }, new HandlebarsTemplateEngine());
 
         //delete contact by Id
         get("/contact/:id/delete",(request, response)->{
             Map<String, Object>model = new HashMap<>();
             int idOfContactToDelete = Integer.parseInt(request.params("id"));
             contactDao.deleteById(idOfContactToDelete);
+
             response.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
 
->>>>>>> a09bf4d972af56f83070ea730577d7772a9e1f82
+
     }
+
 }
+
+
