@@ -35,8 +35,11 @@ public class App {
 
 //
 //    public static void main(String[] args) {
-        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
-        Sql2o sql2o = new Sql2o(connect,"postgres","1234");
+//        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
+//        Sql2o sql2o = new Sql2o(connect,"postgres","1234");
+         String connection = "jdbc:postgresql://e2190@ec2-52-86-115-245.compute-1.amazonaws.com:5432/dcsh49lateihuq";
+         Sql2o sql2o = new Sql2o(connection,"uopkzkeeztrgaj","2359c860df5c0e1606b37641800a54196232ba805425aeb9b572b673cf9e2190");
+
         Sql2oStudentsDao sql2oStudentsDao ;
         Sql2oDevelopersDao sql2oDevelopersDao;
         Sql2oCollaborationDao sql2oCollaborationDao;
@@ -132,7 +135,7 @@ public class App {
         get("/contact/new",(request,response)->{
             Map<String, Object>model = new HashMap<>();
             List<Contacts> contacts = contactDao.getAllContacts();
-            model.put("contact",connect);
+            model.put("contact",contacts);
             return new ModelAndView(model,"contact.hbs");
         },new HandlebarsTemplateEngine());
 
