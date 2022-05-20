@@ -36,7 +36,7 @@ public class App {
 //
 //    public static void main(String[] args) {
         String connect =  "jdbc:postgresql://localhost/geek_collaborators";
-        Sql2o sql2o = new Sql2o(connect,"postgres","okello");
+        Sql2o sql2o = new Sql2o(connect,"postgres","1234");
         Sql2oStudentsDao sql2oStudentsDao ;
         Sql2oDevelopersDao sql2oDevelopersDao;
         Sql2oCollaborationDao sql2oCollaborationDao;
@@ -50,7 +50,7 @@ public class App {
 
 
             /*----------------------------Consume API--------------------------------*/
-            get("/android", (request, response) ->{
+            get("/", (request, response) ->{
                 Map<String, Object> model = new HashMap<String, Object>();
                 return new ModelAndView(model, "android.hbs");
             }, new HandlebarsTemplateEngine());
@@ -121,11 +121,11 @@ public class App {
         // String connection = "jdbc:postgresql://ec2-54-172-175-251.compute-1.amazonaws.com:5432/d19tsrp5ts9arv";
 //        Sql2o sql2o = new Sql2o(connection,"acutsmyrvfxroj","f6f2568b1bedb19e5723424cd139ea089f13b9effb3756dcc39ca0ba0196a631");
 
-
-        get("/",(request, response) -> {
-            Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model,"index.hbs");
-        },new HandlebarsTemplateEngine());
+//
+//        get("/",(request, response) -> {
+//            Map<String, Object> model = new HashMap<>();
+//            return new ModelAndView(model,"index.hbs");
+//        },new HandlebarsTemplateEngine());
 
 
         //display form receive clients data
